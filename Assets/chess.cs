@@ -2,6 +2,16 @@
 using System.Collections;
 
 public class chess : MonoBehaviour {
+    enum DIR_TYPE
+    {
+        DIR_TYPE_0,
+        DIR_TYPE_1,
+        DIR_TYPE_2,
+        DIR_TYPE_3,
+    }
+
+    static const int MAX_DIR_TYPE_COUNT = 4;
+    static const int MIN_WIN_DIR_COUNT = 9;
 
     // 锚点和场景对象
     public GameObject LeftTop;
@@ -31,6 +41,8 @@ public class chess : MonoBehaviour {
 
     // 鼠标点击位置
     Vector3 pointpos;
+    int cur_x = 0;
+    int cur_y = 0;
 
     // 转换类型
     enum turn { black, white };
@@ -80,6 +92,8 @@ public class chess : MonoBehaviour {
                     {
                         chessstate[i, j] = chessturn == turn.black ? 1 : -1;
                         chessturn = chessturn == turn.black ? turn.white : turn.black;
+                        cur_x = i;
+                        cur_y = j;
                     }
                 }
             }
@@ -158,214 +172,101 @@ public class chess : MonoBehaviour {
     //检测是够获胜的函数，不含黑棋禁手检测  
     int Result()
     {
-        int flag = 0;
-        //如果当前该白棋落子，标定黑棋刚刚下完一步，此时应该判断黑棋是否获胜  
-        if (chessturn == turn.white)
+        if (!CheckCanWin()) return 0;
+        if (turn.black == chessturn)
         {
-            for (int i = 0; i < 11; i++)
-            {
-                for (int j = 0; j < 15; j++)
-                {
-                    if (j < 4)
-                    {
-                        //横向  
-                        if (chessstate[i, j] == 1 && chessstate[i, j + 1] == 1 && chessstate[i, j + 2] == 1 && chessstate[i, j + 3] == 1 && chessstate[i, j + 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //纵向  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j] == 1 && chessstate[i + 2, j] == 1 && chessstate[i + 3, j] == 1 && chessstate[i + 4, j] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //右斜线  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j + 1] == 1 && chessstate[i + 2, j + 2] == 1 && chessstate[i + 3, j + 3] == 1 && chessstate[i + 4, j + 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //左斜线  
-                        //if (chessState[i, j] == 1 && chessState[i + 1, j - 1] == 1 && chessState[i + 2, j - 2] == 1 && chessState[i + 3, j - 3] == 1 && chessState[i + 4, j - 4] == 1)  
-                        //{  
-                        //    flag = 1;  
-                        //    return flag;  
-                        //}  
-                    }
-                    else if (j >= 4 && j < 11)
-                    {
-                        //横向  
-                        if (chessstate[i, j] == 1 && chessstate[i, j + 1] == 1 && chessstate[i, j + 2] == 1 && chessstate[i, j + 3] == 1 && chessstate[i, j + 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //纵向  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j] == 1 && chessstate[i + 2, j] == 1 && chessstate[i + 3, j] == 1 && chessstate[i + 4, j] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //右斜线  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j + 1] == 1 && chessstate[i + 2, j + 2] == 1 && chessstate[i + 3, j + 3] == 1 && chessstate[i + 4, j + 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //左斜线  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j - 1] == 1 && chessstate[i + 2, j - 2] == 1 && chessstate[i + 3, j - 3] == 1 && chessstate[i + 4, j - 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                    }
-                    else
-                    {
-                        //横向  
-                        //if (chessState[i, j] == 1 && chessState[i, j + 1] == 1 && chessState[i, j + 2] == 1 && chessState[i, j + 3] == 1 && chessState[i, j + 4] == 1)  
-                        //{  
-                        //    flag = 1;  
-                        //    return flag;  
-                        //}  
-                        //纵向  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j] == 1 && chessstate[i + 2, j] == 1 && chessstate[i + 3, j] == 1 && chessstate[i + 4, j] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                        //右斜线  
-                        //if (chessState[i, j] == 1 && chessState[i + 1, j + 1] == 1 && chessState[i + 2, j + 2] == 1 && chessState[i + 3, j + 3] == 1 && chessState[i + 4, j + 4] == 1)  
-                        //{  
-                        //    flag = 1;  
-                        //    return flag;  
-                        //}  
-                        //左斜线  
-                        if (chessstate[i, j] == 1 && chessstate[i + 1, j - 1] == 1 && chessstate[i + 2, j - 2] == 1 && chessstate[i + 3, j - 3] == 1 && chessstate[i + 4, j - 4] == 1)
-                        {
-                            flag = 1;
-                            return flag;
-                        }
-                    }
+            return -11;
+        }
+        else
+        {
+            return 1;
+        }
+    }
 
-                }
-            }
-            for (int i = 11; i < 15; i++)
-            {
-                for (int j = 0; j < 11; j++)
-                {
-                    //只需要判断横向    
-                    if (chessstate[i, j] == 1 && chessstate[i, j + 1] == 1 && chessstate[i, j + 2] == 1 && chessstate[i, j + 3] == 1 && chessstate[i, j + 4] == 1)
-                    {
-                        flag = 1;
-                        return flag;
-                    }
-                }
-            }
-        }
-        //如果当前该黑棋落子，标定白棋刚刚下完一步，此时应该判断白棋是否获胜  
-        else if (chessturn == turn.black)
+    int CalChessmanCount(int cur_x, int cur_y, int begin_x, int begin_y, int x_add, int y_add)
+    {
+        int count = 0;
+        int x = cur_x - begin_x;
+        int y = cur_y - begin_y;
+        for (int i = 0; i < MIN_WIN_DIR_COUNT; ++i)
         {
-            for (int i = 0; i < 11; i++)
+            if (x < 0 || y < 0)
             {
-                for (int j = 0; j < 15; j++)
-                {
-                    if (j < 4)
-                    {
-                        //横向  
-                        if (chessstate[i, j] == -1 && chessstate[i, j + 1] == -1 && chessstate[i, j + 2] == -1 && chessstate[i, j + 3] == -1 && chessstate[i, j + 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //纵向  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j] == -1 && chessstate[i + 2, j] == -1 && chessstate[i + 3, j] == -1 && chessstate[i + 4, j] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //右斜线  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j + 1] == -1 && chessstate[i + 2, j + 2] == -1 && chessstate[i + 3, j + 3] == -1 && chessstate[i + 4, j + 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //左斜线  
-                        //if (chessState[i, j] == -1 && chessState[i + 1, j - 1] == -1 && chessState[i + 2, j - 2] == -1 && chessState[i + 3, j - 3] == -1 && chessState[i + 4, j - 4] == -1)  
-                        //{  
-                        //    flag = -1;  
-                        //    return flag;  
-                        //}  
-                    }
-                    else if (j >= 4 && j < 11)
-                    {
-                        //横向  
-                        if (chessstate[i, j] == -1 && chessstate[i, j + 1] == -1 && chessstate[i, j + 2] == -1 && chessstate[i, j + 3] == -1 && chessstate[i, j + 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //纵向  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j] == -1 && chessstate[i + 2, j] == -1 && chessstate[i + 3, j] == -1 && chessstate[i + 4, j] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //右斜线  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j + 1] == -1 && chessstate[i + 2, j + 2] == -1 && chessstate[i + 3, j + 3] == -1 && chessstate[i + 4, j + 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //左斜线  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j - 1] == -1 && chessstate[i + 2, j - 2] == -1 && chessstate[i + 3, j - 3] == -1 && chessstate[i + 4, j - 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                    }
-                    else
-                    {
-                        //横向  
-                        //if (chessState[i, j] == -1 && chessState[i, j + 1] ==- 1 && chessState[i, j + 2] == -1 && chessState[i, j + 3] == -1 && chessState[i, j + 4] == -1)  
-                        //{  
-                        //    flag = -1;  
-                        //    return flag;  
-                        //}  
-                        //纵向  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j] == -1 && chessstate[i + 2, j] == -1 && chessstate[i + 3, j] == -1 && chessstate[i + 4, j] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                        //右斜线  
-                        //if (chessState[i, j] == -1 && chessState[i + 1, j + 1] == -1 && chessState[i + 2, j + 2] == -1 && chessState[i + 3, j + 3] == -1 && chessState[i + 4, j + 4] == -1)  
-                        //{  
-                        //    flag = -1;  
-                        //    return flag;  
-                        //}  
-                        //左斜线  
-                        if (chessstate[i, j] == -1 && chessstate[i + 1, j - 1] == -1 && chessstate[i + 2, j - 2] == -1 && chessstate[i + 3, j - 3] == -1 && chessstate[i + 4, j - 4] == -1)
-                        {
-                            flag = -1;
-                            return flag;
-                        }
-                    }
-                }
+                x += x_add;
+                y += y_add;
+                continue;
             }
-            for (int i = 11; i < 15; i++)
+
+            if (chessstate[x,y] == 1 || chessstate[x,y] == -1)
             {
-                for (int j = 0; j < 11; j++)
-                {
-                    //只需要判断横向    
-                    if (chessstate[i, j] == -1 && chessstate[i, j + 1] == -1 && chessstate[i, j + 2] == -1 && chessstate[i, j + 3] == -1 && chessstate[i, j + 4] == -1)
-                    {
-                        flag = -1;
-                        return flag;
-                    }
-                }
+                ++count;
+            }
+
+            if (5 >= count)
+            {
+                return count;
             }
         }
-        return flag;
-    }      
+
+        return count;
+    }
+    bool CheckCanWin()
+    {
+        for (int i = 0; i < MAX_DIR_TYPE_COUNT; ++i)
+        {
+            int begin_x = 0;
+            int begin_y = 0;
+            int x_add = 0;
+            int y_add = 0;
+            int count = 0;
+            switch (i)
+            {
+                case 0:
+                    {
+                        begin_x = -4;
+                        begin_y = 0;
+                        x_add = 1;
+                        y_add = 0;
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                    }
+                    break;
+
+                case 1:
+                    {
+                        begin_x = 0;
+                        begin_y = -4;
+                        x_add = 0;
+                        y_add = 1;
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                    }
+                    break;
+
+                case 2:
+                    {
+                        begin_x = -4;
+                        begin_y = -4;
+                        x_add = 1;
+                        y_add = 1;
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                    }
+                    break;
+
+                case 3:
+                    {
+                        begin_x = -4;
+                        begin_y = 4;
+                        x_add = 1;
+                        y_add = -1;
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                    }
+                    break;
+            }
+
+            if (5 >= count) return true;
+        }
+
+        return false;
+    }
 }
+
+
