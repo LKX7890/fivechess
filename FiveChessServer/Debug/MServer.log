@@ -1,0 +1,261 @@
+﻿  PacketProc.cpp
+d:\vs2013\vc\include\thr\xtimec.h(28): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(30): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(31): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\chrono(736): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(33): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(53): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(66): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(76): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(96): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(98): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(252): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+          d:\vs2013\vc\include\mutex(364): 参见对正在编译的类 模板 实例化“std::unique_lock<_Mutex>”的引用
+d:\vs2013\vc\include\mutex(318): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(115): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(127): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(57): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(117): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(119): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(144): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(149): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(266): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(281): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+  MainApp.cpp
+d:\vs2013\vc\include\thr\xtimec.h(28): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(30): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(31): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\chrono(736): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(33): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(53): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(66): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(76): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(96): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(98): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(252): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+          d:\vs2013\vc\include\mutex(364): 参见对正在编译的类 模板 实例化“std::unique_lock<_Mutex>”的引用
+d:\vs2013\vc\include\mutex(318): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(115): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(127): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(57): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(117): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(119): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(144): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(149): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(266): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(281): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+  Main.cpp
+d:\vs2013\vc\include\thr\xtimec.h(28): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(30): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(31): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\chrono(736): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(33): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(53): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(66): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(76): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(96): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(98): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(252): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+          d:\vs2013\vc\include\mutex(364): 参见对正在编译的类 模板 实例化“std::unique_lock<_Mutex>”的引用
+d:\vs2013\vc\include\mutex(318): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(115): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(127): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(57): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(117): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(119): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(144): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(149): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(266): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(281): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+  MServer.cpp
+d:\vs2013\vc\include\thr\xtimec.h(28): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(30): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xtimec.h(31): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\chrono(736): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(33): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(53): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthreads.h(66): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(76): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\thr\xthread(96): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(98): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\mutex(252): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+          d:\vs2013\vc\include\mutex(364): 参见对正在编译的类 模板 实例化“std::unique_lock<_Mutex>”的引用
+d:\vs2013\vc\include\mutex(318): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(115): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(127): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(57): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(117): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(119): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(144): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(149): error C2248: “std::_Mutex_base::_Mtx”: 无法访问 private 成员(在“std::_Mutex_base”类中声明)
+          d:\vs2013\vc\include\mutex(65) : 参见“std::_Mutex_base::_Mtx”的声明
+          d:\vs2013\vc\include\mutex(24) : 参见“std::_Mutex_base”的声明
+d:\vs2013\vc\include\condition_variable(266): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+d:\vs2013\vc\include\condition_variable(281): error C2872: “xtime”: 不明确的符号
+          可能是“d:\vs2013\vc\include\thr\xtimec.h(23) : xtime”
+          或       “f:\boost\boost_1_66_0\boost\thread\xtime.hpp(35) : boost::xtime”
+  正在生成代码...
