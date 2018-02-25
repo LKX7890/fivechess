@@ -22,7 +22,7 @@ void Server::start(void) {
 }
 
 void Server::run(void) {
-	// 该方法调用完之后，回调对象才会被调用
+	// 监听Io事件，并执行响应回调函数
 	ioService_.run();
 }
 
