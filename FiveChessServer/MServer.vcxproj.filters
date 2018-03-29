@@ -9,17 +9,20 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="Netfile">
+      <UniqueIdentifier>{d0816ad3-4a2d-46ff-ac43-a7d8fbba123c}</UniqueIdentifier>
+    </Filter>
     <Filter Include="packet">
       <UniqueIdentifier>{de6b6767-ec72-4366-9e5b-3685a66ccbc2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{89a0998e-9af3-48d2-86e7-dcac0120e5c8}</UniqueIdentifier>
     </Filter>
     <Filter Include="tool">
       <UniqueIdentifier>{3fe9cc01-89a3-4cbe-b085-78703eea9b52}</UniqueIdentifier>
     </Filter>
     <Filter Include="NetSource">
       <UniqueIdentifier>{f654b11b-2f3d-4df9-9e34-1a0b8b22006e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="NetSource\Netfile">
-      <UniqueIdentifier>{ce72a92f-4143-45b5-bdce-b4ae5a52d62c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +38,36 @@
     <ClCompile Include="PacketProc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ClientInfoManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="OnLineClientManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDataManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\io_service_pool.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\net_comm.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\ServerNetwork.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\tcp_client.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\tcp_message.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\tcp_server.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
+    <ClCompile Include="..\share\network\source\tcp_session.cpp">
+      <Filter>NetSource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainApp.h">
@@ -46,98 +79,107 @@
     <ClInclude Include="PacketProc.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\share\network\packet\ack_code.h">
-      <Filter>packet</Filter>
+    <ClInclude Include="ClientInfoManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\share\network\packet\packet.h">
-      <Filter>packet</Filter>
+    <ClInclude Include="OnLineClientManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\share\network\packet\packet_type.h">
-      <Filter>packet</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\share\xmlOperator.h">
-      <Filter>tool</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\safe_container.h">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\safe_map.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\safe_singleton.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\safe_stack_buffer.h">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\safe_vector.h">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\scheduler.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\serial_packet.h">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\ServerNetwork.h">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\tcp_buffer.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\tcp_client.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\tcp_comm.hpp">
-      <Filter>NetSource\Netfile</Filter>
-    </ClInclude>
-    <ClInclude Include="..\share\network\include\tcp_handler.hpp">
-      <Filter>NetSource\Netfile</Filter>
+    <ClInclude Include="ServerDataManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\tcp_message.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\tcp_server.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\tcp_session.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\thread_header.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\worker.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\ClientNetwork.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\dllexport.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\io_service_pool.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\job_queue.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\msg_def.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\net_comm.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\packet_factory.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\safe_atom.hpp">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\safe_buffer.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
     </ClInclude>
     <ClInclude Include="..\share\network\include\safe_circular_buffer.h">
-      <Filter>NetSource\Netfile</Filter>
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\safe_container.h">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\safe_map.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\safe_singleton.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\safe_stack_buffer.h">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\safe_vector.h">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\scheduler.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\serial_packet.h">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\ServerNetwork.h">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\tcp_buffer.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\tcp_client.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\tcp_comm.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\include\tcp_handler.hpp">
+      <Filter>Netfile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\packet\packet_type.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\packet\ack_code.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\network\packet\packet.h">
+      <Filter>packet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\share\xmlOperator.h">
+      <Filter>tool</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

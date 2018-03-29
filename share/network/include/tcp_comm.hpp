@@ -1,15 +1,16 @@
 #ifndef _TCP_COMM_H
 #define _TCP_COMM_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 #include "thread_header.hpp"
 #include "msg_def.hpp"
 #include "tcp_session.hpp"
 #include "io_service_pool.hpp"
 #include "net_comm.hpp"
 #include "scheduler.hpp"
+#include "boost/functional/factory.hpp"
 
-class NETWORK_API tcp_comm
+class tcp_comm
 {
 public:
 	typedef io_service_pool::ios_type ios_type;
@@ -21,7 +22,7 @@ public:
 public:
 	tcp_comm(net_comm *net,
 			 int n = 4):
-	    m_ios_pool(*factory<io_service_pool*>()(n)),
+	    m_ios_pool(*boost::factory<io_service_pool*>()(n)),
 	    m_queue(net->recv_queue()),
 		m_connectfunc(boost::bind(&net_comm::session_connected, net, _1)),
 		m_disconnectfunc(boost::bind(&net_comm::session_disconnected, net, _1))

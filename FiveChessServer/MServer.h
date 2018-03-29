@@ -17,7 +17,7 @@ public:
 
 protected:
 	bool proc_connect(tcp_session_ptr &session);
-	bool proc_disconnect(tcp_session_ptr &session);
+	bool proc_disconnect(tcp_session_ptr &session);    // 会话断开通过多态调用
 	bool proc_packet(tcp_session_ptr &session, serial_packet *packet);
 	void proc_registerpacket();
 private:

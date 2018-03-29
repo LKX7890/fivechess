@@ -14,6 +14,7 @@
     <ProjectGuid>{165E96A9-FF04-472B-AA5C-75245E0A4F2D}</ProjectGuid>
     <RootNamespace>MServer</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>MServer</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -41,36 +42,40 @@
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>..\..\bin\Server\</OutDir>
+    <OutDir>$(SolutionDir)$(ConfigurationName)</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>F:\boost\boost_1_66_0;$(IncludePath)</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)$(ConfigurationName)</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>F:\boost\boost_1_66_0;$(IncludePath)</IncludePath>
+    <GenerateManifest>false</GenerateManifest>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>F:\boost\boost_1_66_0;..\share\network\include;..\fivechess\FiveChessServer;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Debug;F:\boost\boost_1_66_0\boost;F:\lkx01\fivechess\FiveChessServer;F:\boost\boost_1_66_0;..\share\network\include;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>networkd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)$(ProjectName)d.exe</OutputFile>
-      <AdditionalLibraryDirectories>..\..\share\network\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>F:\lkx01\fivechess\share\network\lib\Network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>F:\lkx01\fivechess\FiveChessServer;F:\boost_1_66_0\boost_1_66_0\bin\vc12\lib;F:\boost\boost_1_66_0\bin.v2\libs;F:\boost\boost_1_66_0\vc12_x86\lib;F:\lkx01\fivechess\share\network\Netlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
       <Command>copy ..\..\share\network\lib\Networkd.dll $(outdir)</Command>
@@ -80,37 +85,47 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>F:\boost\boost_1_66_0;..\share\network\include;..\fivechess\FiveChessServer;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Debug;F:\boost\boost_1_66_0\boost;F:\lkx01\fivechess\FiveChessServer;F:\boost\boost_1_66_0;..\share\network\include;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>F:\lkx01\fivechess\share\network\lib\Network.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>F:\lkx01\fivechess\FiveChessServer;F:\boost_1_66_0\boost_1_66_0\bin\vc12\lib;F:\boost\boost_1_66_0\bin.v2\libs;F:\boost\boost_1_66_0\vc12_x86\lib;F:\lkx01\fivechess\share\network\Netlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
       <Command>copy ..\..\share\network\lib\Network.dll .\</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\share\network\source\io_service_pool.cpp" />
+    <ClCompile Include="..\share\network\source\net_comm.cpp" />
+    <ClCompile Include="..\share\network\source\ServerNetwork.cpp" />
+    <ClCompile Include="..\share\network\source\tcp_client.cpp" />
+    <ClCompile Include="..\share\network\source\tcp_message.cpp" />
+    <ClCompile Include="..\share\network\source\tcp_server.cpp" />
+    <ClCompile Include="..\share\network\source\tcp_session.cpp" />
+    <ClCompile Include="ClientInfoManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainApp.cpp" />
     <ClCompile Include="MServer.cpp" />
+    <ClCompile Include="OnLineClientManager.cpp" />
     <ClCompile Include="PacketProc.cpp" />
+    <ClCompile Include="ServerDataManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\share\network\packet\ack_code.h" />
-    <ClInclude Include="..\..\share\network\packet\packet.h" />
-    <ClInclude Include="..\..\share\network\packet\packet_type.h" />
-    <ClInclude Include="..\..\share\xmlOperator.h" />
     <ClInclude Include="..\share\network\include\ClientNetwork.h" />
     <ClInclude Include="..\share\network\include\dllexport.h" />
     <ClInclude Include="..\share\network\include\io_service_pool.hpp" />
@@ -138,9 +153,16 @@
     <ClInclude Include="..\share\network\include\tcp_session.hpp" />
     <ClInclude Include="..\share\network\include\thread_header.hpp" />
     <ClInclude Include="..\share\network\include\worker.h" />
+    <ClInclude Include="..\share\network\packet\ack_code.h" />
+    <ClInclude Include="..\share\network\packet\packet.h" />
+    <ClInclude Include="..\share\network\packet\packet_type.h" />
+    <ClInclude Include="..\share\xmlOperator.h" />
+    <ClInclude Include="ClientInfoManager.h" />
     <ClInclude Include="MainApp.h" />
     <ClInclude Include="MServer.h" />
+    <ClInclude Include="OnLineClientManager.h" />
     <ClInclude Include="PacketProc.h" />
+    <ClInclude Include="ServerDataManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

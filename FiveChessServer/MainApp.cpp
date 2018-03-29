@@ -22,7 +22,7 @@ void MainApp::StartServer()
 
 void MainApp::InitAppInstance()
 {
-	theData::instance().InitServerDataManager();
+	//theData::instance().InitServerDataManager();
 
 	StartServer();
 }

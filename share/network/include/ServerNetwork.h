@@ -1,12 +1,12 @@
 #ifndef _SERVER_NETWORK_H
 #define _SERVER_NETWORK_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 #include "net_comm.hpp"
 #include "tcp_server.hpp"
 
 //服务器提供给外部的接口
-class NETWORK_API ServerNetwork:public net_comm
+class ServerNetwork:public net_comm
 {
 public:
 	ServerNetwork(int nPort, int nPoolNum = 4, int second_check = 3);

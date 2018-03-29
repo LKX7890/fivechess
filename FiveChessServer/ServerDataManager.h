@@ -2,11 +2,11 @@
 #define _ServerDataManager_H
 
 #include <boost/container/detail/singleton.hpp>
+//using boost::container::container_detail::singleton_default;
 #include <boost/shared_ptr.hpp>
 #include <boost/make_shared.hpp>
 #include "ClientInfoManager.h"
 #include "OnLineClientManager.h"
-#include "MainApp.h"
 
 typedef boost::shared_ptr<ClientInfoManager>   ClientInfoManagerPtr;
 typedef boost::shared_ptr<OnLineClientManager> OnLineClientManagerPtr;
@@ -26,7 +26,7 @@ public:
 };
 
 //创建单件
-typedef singleton_default<ServerDataManager> theData;
+typedef boost::container::container_detail::singleton_default<ServerDataManager> theData;
 
 
 #endif

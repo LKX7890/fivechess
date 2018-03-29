@@ -1,7 +1,7 @@
 #ifndef _TCP_SESSION_H
 #define _TCP_SESSION_H
 
-#include "dllexport.h"
+////#include "dllexport.h"
 
 #include "tcp_message.hpp"
 #include "job_queue.hpp"
@@ -12,9 +12,9 @@
 #include "safe_atom.hpp"
 class net_comm;
 
-using namespace boost;
+//using namespace boost;
 //该类负责处理网络通信，负责处理网络通信，实现了数据收发的核心功能
-class NETWORK_API tcp_session:
+class tcp_session:
 	public boost::enable_shared_from_this<tcp_session>
 {
 public:

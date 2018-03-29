@@ -1,7 +1,7 @@
 #ifndef _NET_COMM_H
 #define _NET_COMM_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 #include "tcp_message.hpp"
 #include "job_queue.hpp"
 #include "worker.h"
@@ -10,12 +10,12 @@
 #include "serial_packet.h"
 #include "scheduler.hpp"
 #include "packet_factory.h"
-#include "dllexport.h"
+//#include "dllexport.h"
 
 //该类主要是处理服务器与客户端共同需要处理的一些操作接口
 //将共有的操作属性封装在该类中
 //该类应该只处理实际的物理连接，具体的连接的含义应在子类中体现
-class NETWORK_API net_comm
+class net_comm
 {
 public:
 	friend class tcp_comm;

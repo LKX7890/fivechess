@@ -1,7 +1,7 @@
 #ifndef _SAFE_SINGLETON_H
 #define _SAFE_SINGLETON_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 
 #include <boost/noncopyable.hpp>
 #include <boost/thread/once.hpp>

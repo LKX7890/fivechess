@@ -5,7 +5,7 @@
 #include "net_comm.hpp"
 #include "tcp_client.hpp"
 
-class NETWORK_API ClientNetwork:public net_comm
+class ClientNetwork:public net_comm
 {
 	typedef boost::asio::ip::tcp  tcp_type;
 public:

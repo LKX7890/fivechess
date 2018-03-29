@@ -9,13 +9,12 @@
 #include "msg_def.hpp"
 #include <boost/archive/text_iarchive.hpp>
 #include <boost/functional/factory.hpp>
-using namespace boost;
-using namespace std;
-class serial_packet;
-class login_packet;
-
 #include "packet.h"
 
+//using namespace boost;
+//using namespace std;
+class serial_packet;
+class login_packet;
 
 typedef char char_type;
 typedef boost::array<char_type, MAX_MSG_SIZE> data_type;
@@ -30,8 +29,8 @@ serial_packet* create_packet(data_type &data, size_type size)
 {
 	std::string strData(data.data(), size);
 	stringstream ss(strData);
-	text_iarchive ia(ss);
-	Packet *pkt = boost::factory<Packet*>()();
+	boost::archive::text_iarchive ia(ss);
+	Packet *pkt = boost::factory<Packet*>()();  // 模板根据模板类型可以确定产生哪个协议
 	pkt->unserial(ia);
 	return pkt;
 }

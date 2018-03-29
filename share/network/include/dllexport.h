@@ -6,6 +6,7 @@
 #pragma warning(disable:4251)
 #pragma warning(disable:4005)
 #pragma warning(disable:4308)
+#pragma warning(disable:4996)
 
 
 #ifndef NETWORK_API

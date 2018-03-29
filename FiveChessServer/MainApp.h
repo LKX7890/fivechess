@@ -2,7 +2,7 @@
 #define _MAINAPP_H
 
 #include <boost/container/detail/singleton.hpp>
-using boost::container::container_detail::singleton_default;
+//using boost::container::container_detail::singleton_default;
 
 #include "MServer.h"
 
@@ -21,7 +21,7 @@ private:
 };
 
 //创建单件
-typedef singleton_default<MainApp> theApp;
+typedef boost::container::container_detail::singleton_default<MainApp> theApp;
 
 
 #endif

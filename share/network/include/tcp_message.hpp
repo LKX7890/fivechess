@@ -1,7 +1,7 @@
 #ifndef _TCP_MESSAGE_H
 #define _TCP_MESSAGE_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 
 #include "msg_def.hpp"
 #include <boost/checked_delete.hpp>
@@ -12,7 +12,7 @@
 #include <boost/noncopyable.hpp>
 #include <boost/crc.hpp>
 //#include "tcp_session.hpp"
-using namespace boost;
+//using namespace boost;
 
 class tcp_session;
 typedef boost::shared_ptr<tcp_session> tcp_session_ptr; //共享指针定义

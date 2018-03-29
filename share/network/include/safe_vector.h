@@ -1,7 +1,7 @@
 #ifndef _SAFE_VECTOR_H
 #define _SAFE_VECTOR_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 
 #include "safe_container.h"
 

@@ -24,7 +24,8 @@ bool MServer::proc_connect(tcp_session_ptr &session)
 bool MServer::proc_disconnect(tcp_session_ptr &session)
 {
 	std::cout<<"proc_disconect"<<std::endl;
-	m_pPacketProc->OnClientDisconnected(session);
+	//m_pPacketProc->OnClientDisconnected(session);
+	remove_session(session);
 	return true;
 }
 
@@ -64,6 +65,13 @@ bool MServer::proc_packet(tcp_session_ptr &session, serial_packet *packet)
 		}
 		break;
 
+	case PACKET_HEART:
+	{
+		heart_packet *temp = dynamic_cast<heart_packet*>(packet);
+		std::cout << temp->m_nHour << std::endl;
+	}
+	break;
+
 	default:
 		break;
 	}
@@ -79,6 +87,7 @@ void MServer::proc_registerpacket()
 	register_packet<add_to_group_packet>(PACKET_ADDTOGROUP);
 	register_packet<leave_to_group_packet>(PACKET_LEAVEGROUP);
 	register_packet<control_game_packet>(PACKET_CONTROL_GAME);
+	register_packet<heart_packet>(PACKET_HEART);
 }
 
 void MServer::SendPacket(tcp_session_ptr& session, serial_packet& packet)

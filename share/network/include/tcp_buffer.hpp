@@ -1,7 +1,7 @@
 #ifndef _TCP_BUFFER_H
 #define _TCP_BUFFER_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 
 #include "include_header/thread_header.hpp"
 #include <boost/config/suffix.hpp>

@@ -3,7 +3,7 @@
 
 #include "serial_packet.h"
 #include <boost/serialization/vector.hpp>
-using namespace boost;
+//using namespace boost;
 #include "ack_code.h"
 #include "RoleInfo.h"
 
@@ -332,5 +332,18 @@ public:
 	roleinfo_packet m_roleInfo;
 };
 
-
+class msg_test :public serial_packet
+{
+	_SERIALIZATION_PACKET()
+public:
+	msg_test() :serial_packet(PACKET_TEST){}
+private:
+	template<class Archive>
+	void serialize(Archive & ar, const unsigned int version)
+	{
+		ar & m_str;
+	}
+public:
+	std::string m_str;
+};
 #endif

@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Runtime.InteropServices;
+
+
 
 public class chess : MonoBehaviour {
     enum DIR_TYPE
@@ -9,9 +12,6 @@ public class chess : MonoBehaviour {
         DIR_TYPE_2,
         DIR_TYPE_3,
     }
-
-    static const int MAX_DIR_TYPE_COUNT = 4;
-    static const int MIN_WIN_DIR_COUNT = 9;
 
     // 锚点和场景对象
     public GameObject LeftTop;
@@ -51,7 +51,29 @@ public class chess : MonoBehaviour {
     int winner = 0;
     bool isplaying = true;
 
+    //[Serializable]
+    //[StructLayout(LayoutKind.Sequential, Pack = 4)]
+    //public struct Test
+    //{
+    //    public int msg_type;
+    //    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 11)]
+    //    public char[] str;
+
+    //    public Test(int msg_type, string msg_date)
+    //    {
+    //        this.msg_type = msg_type;
+    //        this.str = msg_date.PadRight(11, '\0').ToCharArray();
+    //    }
+    //}
+
+    //public byte[] StructToBytes(Object obj)
+    //{
+
+    //}
 	void Start () {
+        // 先连接服务器
+        //NetWorkScript.Instance.Init();
+
         chesspos = new Vector2[15, 15];
         chessstate = new int[15, 15];
         chessturn = turn.black;
@@ -98,8 +120,19 @@ public class chess : MonoBehaviour {
                 }
             }
 
+            // 发送消息到服务端
+
             // 判断结果
-            int result = Result();
+            int drop_chess_type = 0;
+            if (chessturn == turn.black)
+            {
+                drop_chess_type = -1;
+            }
+            else
+            {
+                drop_chess_type = 1;
+            }
+            int result = Result(drop_chess_type);
             if (result == 1)
             {
                 Debug.Log("黑棋胜");
@@ -170,12 +203,12 @@ public class chess : MonoBehaviour {
     }
 
     //检测是够获胜的函数，不含黑棋禁手检测  
-    int Result()
+    int Result(int chessstatus)
     {
-        if (!CheckCanWin()) return 0;
+        if (!CheckCanWin(chessstatus)) return 0;
         if (turn.black == chessturn)
         {
-            return -11;
+            return -1;
         }
         else
         {
@@ -183,26 +216,31 @@ public class chess : MonoBehaviour {
         }
     }
 
-    int CalChessmanCount(int cur_x, int cur_y, int begin_x, int begin_y, int x_add, int y_add)
+    int CalChessmanCount(int cur_x, int cur_y, int begin_x, int begin_y, int x_add, int y_add, int chessstatus)
     {
         int count = 0;
-        int x = cur_x - begin_x;
-        int y = cur_y - begin_y;
-        for (int i = 0; i < MIN_WIN_DIR_COUNT; ++i)
+        int x = cur_x + begin_x;
+        int y = cur_y + begin_y;
+        for (int i = 0; i < 9; ++i)
         {
-            if (x < 0 || y < 0)
+            if ((x > 0 && x < 15) && (y > 0 && y < 15))
+            {
+                if (chessstate[x, y] == chessstatus)
+                {
+                    ++count;
+                }
+
+                x += x_add;
+                y += y_add;
+            }
+            else
             {
                 x += x_add;
                 y += y_add;
                 continue;
             }
 
-            if (chessstate[x,y] == 1 || chessstate[x,y] == -1)
-            {
-                ++count;
-            }
-
-            if (5 >= count)
+            if (5 <= count)
             {
                 return count;
             }
@@ -210,9 +248,9 @@ public class chess : MonoBehaviour {
 
         return count;
     }
-    bool CheckCanWin()
+    bool CheckCanWin(int chessstatus)
     {
-        for (int i = 0; i < MAX_DIR_TYPE_COUNT; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             int begin_x = 0;
             int begin_y = 0;
@@ -227,7 +265,7 @@ public class chess : MonoBehaviour {
                         begin_y = 0;
                         x_add = 1;
                         y_add = 0;
-                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add, chessstatus);
                     }
                     break;
 
@@ -237,7 +275,7 @@ public class chess : MonoBehaviour {
                         begin_y = -4;
                         x_add = 0;
                         y_add = 1;
-                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add, chessstatus);
                     }
                     break;
 
@@ -247,7 +285,7 @@ public class chess : MonoBehaviour {
                         begin_y = -4;
                         x_add = 1;
                         y_add = 1;
-                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add, chessstatus);
                     }
                     break;
 
@@ -257,16 +295,18 @@ public class chess : MonoBehaviour {
                         begin_y = 4;
                         x_add = 1;
                         y_add = -1;
-                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add);
+                        count = CalChessmanCount(cur_x, cur_y, begin_x, begin_y, x_add, y_add, chessstatus);
                     }
                     break;
             }
 
-            if (5 >= count) return true;
+            if (5 <= count) return true;
         }
 
         return false;
     }
+
+
 }
 
 

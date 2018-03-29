@@ -7,7 +7,7 @@
 #ifndef _IO_SERVICE_POOL_H
 #define _IO_SERVICE_POOL_H
 
-#include "dllexport.h"
+//#include "dllexport.h"
 
 #include <algorithm>
 #include <boost/assert.hpp>
@@ -20,7 +20,7 @@
 #include "thread_header.hpp"
 //持多个线程的io_service_pool,其中的每一个线程里都运行着一个并发事件处理器（io_service）,
 //可充分多核CPU的能力
-class NETWORK_API io_service_pool:boost::noncopyable
+class io_service_pool:boost::noncopyable
 {
 public:
 	typedef boost::asio::io_service ios_type;

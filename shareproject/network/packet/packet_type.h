@@ -1,0 +1,48 @@
+#ifndef _PACKET_TYPE_H
+#define _PACKET_TYPE_H
+
+//这个类主要是声明序列化包的类型，通过包的类型识别包
+//新加的包应该在此处添加相应的包类型
+
+typedef enum empacket_type
+{
+	PACKET_DEFAULT = 0xffff,
+	PACKET_HEART = 0x8000,
+	
+	PACKET_LOGIN,
+	PACKET_ACK_LOGIN,
+
+	PACKET_LOGOUT,
+	PACKET_ACK_LOGOUT,
+
+	PACKET_REGISTER,
+	PACKET_ACK_REGISTER,
+
+	PACKET_ADD_CLIENT,     
+	PACKET_REMOVE_CLIENT,
+
+	PACKET_CLIENTINFO,
+
+	PACKET_ADDTOGROUP,     //某一个客户端加入分组
+
+	PACKET_LEAVEGROUP,     //某一个客户端离开分组
+
+	PACKET_CONTROL_GAME,   //相当于控制游戏状态
+
+	PACKET_ROLEINFO,
+
+	PACKET_REALTIME_ROLEINFO, //角色的实时信息
+
+	PACKET_GROUP_ROLEINFO,
+
+	PACKET_CLIENT_GAME_STATUS,
+
+	PACKET_ALL_CLIENTINFO,
+	
+	PACKET_DISCONNECT,
+}packet_type;
+
+
+
+
+#endif

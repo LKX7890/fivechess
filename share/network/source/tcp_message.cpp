@@ -57,20 +57,21 @@ bool tcp_message::check_head()
 //检查消息体的crc校验
 bool tcp_message::check_msg_crc()
 {
-	boost::crc_32_type crc32;
-	crc32.process_bytes(&m_msg[0], get_head()->size);
-	//std::cout<<"get_head()->chksum:"<<get_head()->chksum<<std::endl;
-	//std::cout<<"crc32.checksum():"<<crc32.checksum()<<std::endl;
+	//boost::crc_32_type crc32;
+	//crc32.process_bytes(&m_msg[0], get_head()->size);
+	////std::cout<<"get_head()->chksum:"<<get_head()->chksum<<std::endl;
+	////std::cout<<"crc32.checksum():"<<crc32.checksum()<<std::endl;
 
-	return get_head()->chksum == crc32.checksum();
+	//return get_head()->chksum == crc32.checksum();
+	return false;
 }
 
 //在消息头里设置消息体的crc校验
 void tcp_message::set_msg_crc()
 {
-	boost::crc_32_type crc32;
-	crc32.process_bytes(&m_msg[0], get_head()->size);
-	get_head()->chksum = crc32.checksum();
+	//boost::crc_32_type crc32;
+	//crc32.process_bytes(&m_msg[0], get_head()->size);
+	//get_head()->chksum = crc32.checksum();
 }
 
 

@@ -3,12 +3,12 @@
 #include <iostream>
 #include <string>
 #include "net_comm.hpp"
-using namespace std;
+//using namespace std;
 
 #include <boost/bind.hpp>
 #include <boost/ref.hpp>
 
-using namespace boost;
+//using namespace boost;
 using namespace boost::asio;
 
 
@@ -108,15 +108,15 @@ void tcp_session::read(tcp_request_ptr req)
 			   m_strand.wrap(
 			                 bind(&tcp_session::handle_read_head,
 							 shared_from_this(),
-							 placeholders::error, 
-							 placeholders::bytes_transferred,
+							 boost::asio::placeholders::error, 
+							 boost::asio::placeholders::bytes_transferred,
 							 req)));
 }
 
 
 
 
-void PrintError(const system::error_code& ec)
+void PrintError(const boost::system::error_code& ec)
 {
 	int error_code = ec.value();
 	switch(error_code)
@@ -281,8 +281,8 @@ void tcp_session::handle_read_head(const boost::system::error_code &error,
 		       m_strand.wrap(
 		                     bind(&tcp_session::handle_read_msg,
 		                           shared_from_this(),
-		                           placeholders::error, 
-		                           placeholders::bytes_transferred,
+								   boost::asio::placeholders::error,
+								   boost::asio::placeholders::bytes_transferred,
 		                           req)));
 }
 
@@ -291,15 +291,15 @@ void tcp_session::handle_read_msg(const boost::system::error_code &error,
 								  size_t byte_transferred, 
 								  tcp_request_ptr req)
 {
-	bool bRight = req->check_msg_crc();
+	//bool bRight = req->check_msg_crc();
 
-	//检查消息体是否正确
-	if (error || !bRight)
-	{
-		PrintError(error);
-		close();
-		return;
-	}
+	////检查消息体是否正确
+	//if (error || !bRight)
+	//{
+	//	PrintError(error);
+	//	close();
+	//	return;
+	//}
 
 
 	//step6-->将收到的消息加入到job_queue
@@ -328,8 +328,8 @@ void tcp_session::write(tcp_response_ptr resp)
 				m_strand.wrap(
 				              bind(&tcp_session::handle_write_head, 
 							  shared_from_this(), 
-							  placeholders::error, 
-							  placeholders::bytes_transferred,
+							  boost::asio::placeholders::error,
+							  boost::asio::placeholders::bytes_transferred,
 							  resp)));
 }
 
@@ -351,8 +351,8 @@ void tcp_session::handle_write_head(const boost::system::error_code &error,
 				m_strand.wrap(
 				              bind(&tcp_session::handle_write_msg,
 							        shared_from_this(),
-									placeholders::error,
-									placeholders::bytes_transferred,
+									boost::asio::placeholders::error,
+									boost::asio::placeholders::bytes_transferred,
 									resp)));
 }
 

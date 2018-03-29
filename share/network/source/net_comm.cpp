@@ -1,6 +1,7 @@
 #include "net_comm.hpp"
 #include <boost/functional/factory.hpp>
 #include "tcp_session.hpp"
+#include "boost/crc.hpp"
 
 #pragma warning(disable:4355)
 #pragma warning(disable:4996)
@@ -34,15 +35,23 @@ net_comm::req_queue_type &net_comm::recv_queue()
 }
 
 
-//以下两个函数是供调用的回调函数
+//以下两个函数是供调用的回调函数，通过传入会话拿到socket
 bool net_comm::process_msg(tcp_request_ptr &req)
 {
+	//const int size = req->get_head()->size;
+	//char buff[MAX_MSG_SIZE] = { 0 };
+
+	//memcpy(buff, req->get_head(), sizeof(req->get_head()));
+	//memcpy((void*)buff[size], req->msg_data(), sizeof(req->msg_data()));
+
 	msg_head *head = req->get_head();
 	serial_packet *p = m_packetfactory.generate_packet(static_cast<packet_type>(head->type), req->msg_data(), head->size);
 	if (p)
 	{
 		return proc_packet(req->get_session(), p);
 	}
+
+	//return proc_packet(req->get_session(), msg_date);
 	return true;
 	
 }
@@ -50,7 +59,7 @@ bool net_comm::process_msg(tcp_request_ptr &req)
 
 bool net_comm::send_msg(tcp_response_ptr &resp)
 {
-	resp->set_msg_crc();
+	//resp->set_msg_crc();
 	resp->get_session()->write(resp);
 	return true;
 }
@@ -92,7 +101,7 @@ void net_comm::generate_session_data(tcp_response_ptr &resp, serial_packet &pack
 
 	std::ostrstream sa(buf, SEND_BUFFER);
 
-	text_oarchive oa(sa);
+	boost::archive::text_oarchive oa(sa);
 	packet.serial(oa);
 
 	
@@ -100,12 +109,12 @@ void net_comm::generate_session_data(tcp_response_ptr &resp, serial_packet &pack
 	msg_head head;
 	head.type = packet.get_packet_type();
 
-	head.size = sa.pcount();
+	head.size = static_cast<uint32_t>(sa.pcount());
 
-	head.chksum = std::for_each(buf, buf + sa.pcount(), crc_32_type())();
+	//head.chksum = std::for_each(buf, buf + sa.pcount(), boost::crc_32_type())();
 
 	//3.赋值
-	resp->get_head()->chksum = head.chksum;
+	//resp->get_head()->chksum = head.chksum;
 	resp->get_head()->size   = head.size;
 	resp->get_head()->type   = head.type;
 

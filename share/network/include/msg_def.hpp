@@ -28,7 +28,7 @@ struct msg_head
 {
 	uint32_t type;   //消息类型
 	uint32_t size;   //消息体大小
-	uint32_t chksum; //CRC校验
+	//uint32_t chksum; //CRC校验
 };
 
 #define MAX_MSG_SIZE 1024  //消息体最大长度
