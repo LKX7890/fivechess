@@ -1,0 +1,30 @@
+﻿生成启动时间为 2018/2/4 9:52:09。
+     1>项目“G:\FiveChessProject\FiveChess\FiveChessServer\FiveChessServer\FiveChessServer.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\vs2013\VC\bin\CL.exe /c /IC:\boost\boost_1_65_0 /IF:\boost\boost_1_66_0 /IF:\boost\boost_1_66_0\boost /IF:\lkx01\fivechess\FiveChessServer /AI"-D_WIN32_WINNT=0x0501" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp server.cpp session.cpp
+         session.cpp
+         Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+         - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+         - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+         Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+         server.cpp
+         Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+         - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+         - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+         Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+         main.cpp
+         Please define _WIN32_WINNT or _WIN32_WINDOWS appropriately. For example:
+         - add -D_WIN32_WINNT=0x0501 to the compiler command line; or
+         - add _WIN32_WINNT=0x0501 to your project's Preprocessor Definitions.
+         Assuming _WIN32_WINNT=0x0501 (i.e. Windows XP target).
+         正在生成代码...
+       Link:
+         C:\vs2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\FiveChessProject\FiveChess\FiveChessServer\Debug\FiveChessServer.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\boost\lib /LIBPATH:F:\boost\boost_1_66_0\libs kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTDEPENDENCY:F:\boost\boost_1_66_0 /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\FiveChessProject\FiveChess\FiveChessServer\Debug\FiveChessServer.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\FiveChessProject\FiveChess\FiveChessServer\Debug\FiveChessServer.lib" /MACHINE:X86 Debug\main.obj
+         Debug\server.obj
+         Debug\session.obj
+         FiveChessServer.vcxproj -> G:\FiveChessProject\FiveChess\FiveChessServer\Debug\FiveChessServer.exe
+     1>已完成生成项目“G:\FiveChessProject\FiveChess\FiveChessServer\FiveChessServer\FiveChessServer.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:24.78

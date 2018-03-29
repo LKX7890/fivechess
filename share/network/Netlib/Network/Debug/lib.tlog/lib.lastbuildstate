@@ -1,2 +1,6 @@
 #TargetFrameworkVersion=v4.0:PlatformToolSet=v120:EnableManagedIncrementalBuild=false:VCToolArchitecture=Native32Bit
+<<<<<<< HEAD:share/network/Netlib/Network/Debug/lib.tlog/lib.lastbuildstate
 Debug|Win32|F:\lkx01\fivechess\share\network\Netlib\|
+=======
+Debug|Win32|G:\FiveChessProject\FiveChess\FiveChessServer\|
+>>>>>>> 268e3ff5db215ea2abfd58d51271bbde539632bb:FiveChessServer/FiveChessServer/Debug/FiveChessServer.tlog/FiveChessServer.lastbuildstate
