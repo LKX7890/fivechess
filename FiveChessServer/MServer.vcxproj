@@ -58,7 +58,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>Debug;F:\boost\boost_1_66_0\boost;F:\lkx01\fivechess\FiveChessServer;F:\boost\boost_1_66_0;..\share\network\include;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Debug;C:\boost\boost_1_66_0\boost;D:\fivechess\FiveChessServer;C:\boost\boost_1_66_0;..\share\network\include;..\share\network\packet;..\share;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -68,9 +68,9 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>F:\lkx01\fivechess\share\network\lib\Network.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>D:\FiveChess\share\network\lib\Network.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>F:\lkx01\fivechess\FiveChessServer;F:\boost_1_66_0\boost_1_66_0\bin\vc12\lib;F:\boost\boost_1_66_0\bin.v2\libs;F:\boost\boost_1_66_0\vc12_x86\lib;F:\lkx01\fivechess\share\network\Netlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\FiveChess\FiveChessServer;C:\boost\boost_1_60_0\bin\vc12\lib;C:\boost\boost_1_66_0\bin.v2\libs;C:\boost\boost_1_66_0\vc12_x86\lib;D:\FiveChess\share\network\Netlib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
